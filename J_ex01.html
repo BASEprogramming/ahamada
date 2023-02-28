@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<script>
+		function sum() {
+			let max = document.getElementById("max").value;
+			if (isNaN(max)){
+				document.getElementById("alert").textContent = "数字を入力してください";
+			}else{
+				let total = 0;
+				let i = 1;
+				for (i = 1 ; i <= max ; i++){
+					total = total + i;
+				}
+				document.getElementById("result").textContent = total;
+				document.getElementById("val").textContent = max;
+			}
+		}
+	</script>
+	<body>
+		<h1>
+			1から<span id = "val"></span>までの合計は<span id = "result"></span>
+		</h1>
+		<input id = "max">
+		<button onclick = "sum()">合計</button>
+		<p id = "alert"></p>
+	</body>
+</html>

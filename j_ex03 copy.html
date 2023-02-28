@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<script>
+			class Pen {
+				constructor(color, length){
+					this.color = color;
+					this.length = length;
+				}
+			}
+			// function draw(){
+			// 	this.length -= 0.1;
+			// }
+			let penR = new Pen("red", 5);
+			let penG = new Pen("green", 12);
+			let penB = new Pen("blue", 20);
+			
+			let pen;
+			
+			function stroke() {
+				document.getElementById("color").textContent = pen.color;
+				document.getElementById("length").textContent = pen.length;
+				pen.length -= 0.1;
+			}
+
+			function pickR(){
+				pen = penR;
+			}
+			function pickG(){
+				pen = penG;
+			}
+			function pickB(){
+				pen = penB;
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="pickR()">pick red</button>
+		<button onclick="pickG()">pick green</button>
+		<button onclick="pickB()">pick blue</button>
+		<button onclick="stroke()">draw</button><br>
+		pen's color is <span id = "color"></span><br>
+		pen's length is <span id = "length"></span>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!--from object-pen2-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UFT-8">
+		<script>
+			/*オブジェクトについてここで少しまとめてみる試み
+			ここでのオブジェクトについての定義
+			正確に表現するのであればプロパティの集合といえる
+			関連のあるデータの機能の集合
+			さまざまなもの機能の集合と捉える
+			個別の機能をプロパティと言っている
+			自分、敵など大きな要素をオブジェクトという
+			オブジェクトに対して行う操作のことをメゾッドという
+			この機能(メゾッド)の集合がインターフェイスという*/
+			let pen = {
+				color: "red",
+				length: 5,	//これはペンオブジェクトにあるプロパティ
+				draw: function(){
+					this.length -= 0.01;	//これはメゾッド。長さをマイナス0.01していく
+				}
+			};
+			function stroke() {
+				pen.draw();
+				document.getElementById("length").textContent = pen.length;
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="stroke()">書く</button>
+		<p>penの長さは<span id = "length"></span>cm</p>
+	</body>
+</html>
+
+<!--ボタンがクリックされるとstroke関数が呼び出される。
+	stroke関数ではpenオブジェクトのdrawメゾッドが呼び出されてlengthがマイナスされる
+	それが”lengthに格納されて表示される”-->

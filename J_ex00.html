@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			p {
+				text-align: center;
+		  		font-size: 40px;
+			}
+		</style>
+		<script>
+			function check(){
+				let a = document.getElementById("i0").value;
+				let b = document.getElementById("i1").value;
+				if(isNaN(a) || isNaN(b)){
+					document.getElementById("result").textContent = "数字を入力してください";
+				}else if (a == "" || b == ""){
+					document.getElementById("result").textContent = "値を入力してください";
+				}else if(a == b){
+					document.getElementById("result").textContent = "同じ";
+				} else{
+					document.getElementById("result").textContent = "はずれ！";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		a:<input id = "i0">
+		b:<input id = "i1"> 
+		<button onclick="check()">check</button>
+		<p id = "result"></p>
+	</body>
+</html>
